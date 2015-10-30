@@ -27,27 +27,23 @@ function initialize() {
       ]
     }
   ];
-  var styledMap = new google.maps.StyledMapType(styles,
-    {name: "Styled Map"});
-  var myLatLng = new google.maps.LatLng(-37.819647, 144.957328);
+  // var styledMap = new google.maps.StyledMapType(styles,
+  //   {name: "Styled Map"});
+  var myLatLng = new google.maps.LatLng(14.313489, 76.6522538);
   var mapOptions = {
-    zoom: 14,
+    zoom: 17,
     center: myLatLng,
-    scrollwheel: false,
-     disableDefaultUI: true,
-    mapTypeControlOptions: {
-      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-    }
+    scrollwheel: true,
+     disableDefaultUI: true
   };
   var map = new google.maps.Map(document.getElementById('gmap'),
     mapOptions);
   var image = 'images/marker.png';
   var myMarker = new google.maps.Marker({
       position: myLatLng,
-      map: map,
-      icon: image
+      map: map
   });
-  map.mapTypes.set('map_style', styledMap);
-  map.setMapTypeId('map_style');
+  // map.mapTypes.set('map_style', styledMap);
+  // map.setMapTypeId('map_style');
 }
 google.maps.event.addDomListener(window, 'load', initialize);
